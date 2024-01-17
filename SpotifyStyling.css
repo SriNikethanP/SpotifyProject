@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background-color: #121212;
+    color: #b3b3b3;
+}
+.mainBody{
+    display: flex;
+    height: 100vh;
+}
+.leftSection {
+ background-color: #212121;
+ border-radius: 1rem;
+ 
+ margin: 0.5rem;
+ padding: 0.5rem;
+ width: 70%;
+ height: auto;
+}
+nav {
+    background-color: #212121;
+    
+    width: 100%;
+    min-height: 10%;
+    
+}
+.SpotifyPlaylist{
+   /* display: flex;
+   justify-content: center;
+   align-items: center; */
+   height:90%; 
+    width: 100%;
+}
+.rightSection{
+    width: 30%;
+
+}
+.NavigationSection {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: #212121;
+    border-radius: 1rem;
+    
+    min-height: 20%;
+}
+
+.YourPlaylist {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: #212121;
+    border-radius: 1rem;
+   
+    min-height: 72%;
+}
