@@ -121,4 +121,40 @@ font-family: 'Poppins', sans-serif;
     margin: 0.5vh;
     margin-top: 2vh;
     border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.album{
+    width: 80%;
+    height: 70%;
+    /* background-image: url(PlaylistImages/ekVillain.jpg); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.Animal{
+    background-image: url(PlaylistImages/Animal.jpg);
+}
+.Ashiqui2{
+    background-image: url(PlaylistImages/Ashiqui2.jpg);
+}
+.Dhruva{
+    background-image: url(PlaylistImages/dhruva.jpg);
+}
+.EkVillain{
+    background-image: url(PlaylistImages/ekVillain.jpg);
+}
+.Salaar{
+    background-image: url(PlaylistImages/salaar.jpg);
+}
+.Maharshi{
+    background-image: url(PlaylistImages/maharshi.jpg);
+}
+.Iddarammailatho{
+    background-image: url(PlaylistImages/iddarammailatho.jpg);
+}
+.kgf2{
+    background-image: url(PlaylistImages/kgf2.jpg);
 }
