@@ -8,8 +8,8 @@ body {
     background-color: #121212;
     color: #b3b3b3;
     position: relative;
-    
-font-family: 'Poppins', sans-serif;
+
+    font-family: 'Poppins', sans-serif;
 }
 
 .mainBody {
@@ -34,14 +34,14 @@ font-family: 'Poppins', sans-serif;
     min-height: 10%;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .SpotifyPlaylist {
     display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     height: 90%;
     width: 100%;
 
@@ -58,7 +58,29 @@ font-family: 'Poppins', sans-serif;
     background-color: #212121;
     border-radius: 1rem;
 
-    min-height: 20%;
+    min-height: 12%;
+}
+
+.Home {
+    padding: 1vh;
+    margin: 1vh;
+}
+
+.Search {
+    padding: 1vh;
+    margin: 1vh;
+
+}
+
+.HomeLogo {
+    font-size: x-large;
+    padding-right: 1vw;
+}
+
+.SearchLogo {
+    font-size: x-large;
+    padding-right: 1vw;
+
 }
 
 .YourPlaylist {
@@ -75,33 +97,38 @@ font-family: 'Poppins', sans-serif;
     border-radius: 4vh;
     width: 55vh;
     height: 7vh;
-    border: 0px;
+    border: none;
     text-align: start;
     display: inline-block;
     margin-right: 65vh;
 }
-.search{
+
+.search {
     width: 80%;
-    
+
     height: 7vh;
     text-align: start;
-    margin:  0 0 0 1vh;
+    margin: 0 0 0 1vh;
     border: none;
     background: transparent;
     font-size: medium;
+    /* text-decoration: none; */
+    outline: none;/* this removes the outline when the input is focused*/
+    caret-color: white;/*changes cursor colour to white*/
+}
 
-    
+.searchLogo {
+    margin-left: 2vh;
+    padding-top: 0.3vh;
+    color: white;
 }
-.searchLogo{
-  margin-left: 2vh;
-  padding-top: 0.3vh;
-  color: white;
-}
+
 .SignUp {
-   font-weight: 800;
-   margin: 2vh;
+    font-weight: 800;
+    margin: 2vh;
 }
-.LogIn{
+
+.LogIn {
     padding: 2vh;
     background-color: white;
     font-weight: 800;
@@ -109,13 +136,15 @@ font-family: 'Poppins', sans-serif;
     border-radius: 3vh;
     width: 10vh;
     display: block;
-    
+
     text-align: center;
 }
-.SignUp :hover{
+
+.SignUp:hover {
     color: white;
 }
-.playlist{
+
+.playlist {
     width: 23%;
     height: 47%;
     background-color: #1db954;
@@ -127,45 +156,54 @@ font-family: 'Poppins', sans-serif;
     align-items: center;
     justify-content: space-evenly;
 }
-.album{
+
+.album {
     width: 80%;
     height: 70%;
     /* background-image: url(PlaylistImages/ekVillain.jpg); */
     background-size: contain;
     background-repeat: no-repeat;
-    
+
 }
-.Animal{
+
+.Animal {
     background-image: url(PlaylistImages/Animal.jpg);
 }
-.Ashiqui2{
+
+.Ashiqui2 {
     background-image: url(PlaylistImages/Ashiqui2.jpg);
 }
-.Dhruva{
+
+.Dhruva {
     background-image: url(PlaylistImages/dhruva.jpg);
 }
-.EkVillain{
+
+.EkVillain {
     background-image: url(PlaylistImages/ekVillain.jpg);
 }
-.Salaar{
+
+.Salaar {
     background-image: url(PlaylistImages/salaar.jpg);
 }
-.Maharshi{
+
+.Maharshi {
     background-image: url(PlaylistImages/maharshi.jpg);
 }
-.Iddarammailatho{
+
+.Iddarammailatho {
     background-image: url(PlaylistImages/iddarammailatho.jpg);
 }
-.kgf2{
+
+.kgf2 {
     background-image: url(PlaylistImages/kgf2.jpg);
 }
 
-.playBar{
+.playBar {
     width: 100%;
     background-color: #121212;
     height: 100px;
     position: absolute;
     bottom: 0;
 
-    
+
 }
