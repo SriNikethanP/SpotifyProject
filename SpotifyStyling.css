@@ -223,6 +223,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
+    gap: 1vh;
 
 
 }
@@ -281,10 +282,12 @@ body {
     width: 70%;
     
 }
-.SongCard img {
-    transition: transform 0.2s;
+
+.play{
     
+    transition: transform 0.2s;
 }
-.SongCard img:hover{
+.play:hover{
     transform: scale(1.2);
+
 }
