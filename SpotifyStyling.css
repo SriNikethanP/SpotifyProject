@@ -90,6 +90,7 @@ body {
     border-radius: 1rem;
 
     min-height: 72%;
+    position: relative;
 }
 
 .searchBar {
@@ -113,8 +114,10 @@ body {
     background: transparent;
     font-size: medium;
     /* text-decoration: none; */
-    outline: none;/* this removes the outline when the input is focused*/
-    caret-color: white;/*changes cursor colour to white*/
+    outline: none;
+    /* this removes the outline when the input is focused*/
+    caret-color: white;
+    /*changes cursor colour to white*/
 }
 
 .searchLogo {
@@ -142,6 +145,16 @@ body {
 
 .SignUp:hover {
     color: white;
+}
+
+.Home:hover {
+    color: white;
+
+}
+
+.Search:hover {
+    color: white;
+
 }
 
 .playlist {
@@ -201,9 +214,77 @@ body {
 .playBar {
     width: 100%;
     background-color: #121212;
-    height: 100px;
+    /* background-color: #fff; */
+    height: 8vh;
+
+    padding-top: 2vh;
     position: absolute;
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 
 
+}
+
+.YourPlaylist p {
+    color: white;
+    font-weight: 600;
+    font-size: xx-large;
+    margin: 2vh;
+}
+
+.localsongs {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin: 2vh;
+    /* background-color: #fff; */
+    min-height: 80%;
+    width: 90%;
+}
+
+.SongCard {
+
+    /* position: absolute; */
+    width: 100%;
+    height: 20%;
+    background-color: #535353;
+    display: flex;
+    /* justify-content: ; */
+    /* gap: 10px; */
+    align-items: center;
+    border-radius: 1vh;
+    margin: 1vh;
+    /* transition: box-shadow 0.3s; */
+    transition: transform 0.2s;
+}
+.SongCard:hover{
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5); */
+    transform: scale(1.02);
+    
+}
+
+.Banjaara {
+    width: 8vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 8vh;
+    border-radius: 2vh;
+    background-image: url(PlaylistImages/ekVillain.jpg);
+    margin: 1vh;
+    
+}
+
+.songName {
+    width: 70%;
+    
+}
+.SongCard img {
+    transition: transform 0.2s;
+    
+}
+.SongCard img:hover{
+    transform: scale(1.2);
 }
