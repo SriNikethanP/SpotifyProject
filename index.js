@@ -30,3 +30,8 @@ hamburger.addEventListener("click", () => {
     // console.log(variable)
     // console.log(hamburger)
 })
+
+//Add cross
+document.querySelector(".cross").addEventListener("click", () => {
+    document.querySelector(".right").style.left = "-100%";
+})

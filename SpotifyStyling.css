@@ -235,7 +235,7 @@ padding-bottom: 50px;
     justify-content: center;
     align-items: start;
     gap: 6px;
-
+    z-index: 2;
 
 }
 
@@ -255,7 +255,7 @@ padding-bottom: 50px;
     /* background-color: #fff; */
     min-height: 80%;
     width: 90%;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .SongCard {
@@ -312,14 +312,14 @@ padding-bottom: 50px;
     padding: 10px;
     display: none;
 }
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
     .right{
         background-color: #060606;
         position: absolute;
         left: -100%;
         z-index: 1;
-        transition: all 2s;
-        
+        transition: all 0.5s;
+        width: 30%;
     }
     .leftSection {
         width: 100%;
