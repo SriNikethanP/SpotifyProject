@@ -255,7 +255,11 @@ padding-bottom: 50px;
     /* background-color: #fff; */
     min-height: 80%;
     width: 90%;
+<<<<<<< HEAD
     /* overflow: auto; */
+=======
+    overflow: auto;
+>>>>>>> cd577871cd579637a2ada44588a7ab77a69557f7
 }
 
 .SongCard {
@@ -312,14 +316,23 @@ padding-bottom: 50px;
     padding: 10px;
     display: none;
 }
+<<<<<<< HEAD
 @media (max-width: 1050px) {
+=======
+@media (max-width: 950px) {
+>>>>>>> cd577871cd579637a2ada44588a7ab77a69557f7
     .right{
         background-color: #060606;
         position: absolute;
         left: -100%;
         z-index: 1;
+<<<<<<< HEAD
         transition: all 0.5s;
         width: 30%;
+=======
+        transition: all 2s;
+        
+>>>>>>> cd577871cd579637a2ada44588a7ab77a69557f7
     }
     .leftSection {
         width: 100%;
