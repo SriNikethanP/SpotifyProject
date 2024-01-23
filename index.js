@@ -22,3 +22,11 @@ for (let index = 0; index < AllPlayButtons; index++) {
 
     })
 }
+//Add hamburger
+let hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", () => {
+    document.querySelector(".right").style.left = "0";
+    // let variable = document.querySelector(".right")
+    // console.log(variable)
+    // console.log(hamburger)
+})
