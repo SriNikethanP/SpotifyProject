@@ -33,6 +33,12 @@ body {
     width: 100%;
     min-height: 10%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -49,7 +55,7 @@ padding-bottom: 50px;
 }
 
 .rightSection {
-    width: 30%;
+    width: 500px;
 
 }
 
@@ -106,8 +112,9 @@ padding-bottom: 50px;
     border: none;
     text-align: start;
     display: inline-block;
-    margin-right: 400px;
+    /* margin-right: 400px; */
 }
+
 
 .search {
     width: 80%;
@@ -119,10 +126,13 @@ padding-bottom: 50px;
     background: transparent;
     font-size: medium;
     /* text-decoration: none; */
-    outline: none;
     /* this removes the outline when the input is focused*/
     caret-color: white;
     /*changes cursor colour to white*/
+    outline: none;
+}
+.song{
+    padding: 10px;
 }
 
 .searchLogo {
@@ -255,11 +265,7 @@ padding-bottom: 50px;
     /* background-color: #fff; */
     min-height: 80%;
     width: 90%;
-<<<<<<< HEAD
     /* overflow: auto; */
-=======
-    overflow: auto;
->>>>>>> cd577871cd579637a2ada44588a7ab77a69557f7
 }
 
 .SongCard {
@@ -269,7 +275,7 @@ padding-bottom: 50px;
     height: 20%;
     background-color: #101010;
     display: flex;
-    /* justify-content: ; */
+    justify-content:space-between;
     /* gap: 10px; */
     align-items: center;
     border-radius: 6px;
@@ -282,9 +288,12 @@ padding-bottom: 50px;
     transform: scale(1.02);
     
 }
+/* .song{
+    display: flex;justify-content: center;align-items: center;
+} */
 
 .Banjaara {
-    width: 8vh;
+    width: 48px;
     background-size: contain;
     background-repeat: no-repeat;
     height: 48px;
@@ -295,13 +304,19 @@ padding-bottom: 50px;
 }
 
 .songName {
-    width: 70%;
+    /* width: 70%; */
     
+}
+.songPhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .play{
     
     transition: transform 0.2s;
+    
 }
 .play:hover{
     transform: scale(1.2);
@@ -316,27 +331,37 @@ padding-bottom: 50px;
     padding: 10px;
     display: none;
 }
-<<<<<<< HEAD
 @media (max-width: 1050px) {
-=======
-@media (max-width: 950px) {
->>>>>>> cd577871cd579637a2ada44588a7ab77a69557f7
+    .rightSection{
+        width: 0%;
+    }
     .right{
-        background-color: #060606;
+        background-color: #000000;
         position: absolute;
         left: -100%;
         z-index: 1;
-<<<<<<< HEAD
         transition: all 0.5s;
-        width: 30%;
-=======
-        transition: all 2s;
-        
->>>>>>> cd577871cd579637a2ada44588a7ab77a69557f7
+        /* width: 50%; */
     }
     .leftSection {
-        width: 100%;
+        width: 100vw;
     }
+    .info{
+        display: none;
+    }
+    .searchBar{
+        width: 42px;
+        
+        
+    }
+    .navbar{
+        justify-content: left;
+    }
+    
+    .search{
+        width: 1px;
+    }
+    
     nav{
         width: 100%;
     }
