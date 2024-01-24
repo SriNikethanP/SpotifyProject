@@ -14,7 +14,7 @@ body {
 
 .mainBody {
     display: flex;
-    height: 98vh;
+    height: 95svh;
 }
 
 .leftSection {
@@ -50,7 +50,7 @@ body {
     flex-wrap: wrap;
     height: 80%;
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
 padding-bottom: 50px;
 }
 
@@ -341,10 +341,10 @@ padding-bottom: 50px;
         left: -100%;
         z-index: 1;
         transition: all 0.5s;
-        /* width: 50%; */
+        width: 250px;
     }
     .leftSection {
-        width: 100vw;
+        width: 100svw;
     }
     .info{
         display: none;
