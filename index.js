@@ -25,7 +25,8 @@ async function main() {
     for (const i of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li> <div class="SongCard">
         <div class="songPhoto">
-            <div class="${i.replaceAll("%20", "")}"></div>
+        <div class="songphotocard"><img src="PlaylistImages/${i.replaceAll("%20", "")}.jpg" alt=""> </div>
+        
             <div class="songName">${i.replaceAll("%20", " ")}</div>
         </div>
         <div class="song">
