@@ -196,6 +196,7 @@ body {
 .playlist:hover {
     transform: scale(1.1);
     z-index: 1;
+    cursor: pointer;
 }
 
 .album {
@@ -220,7 +221,7 @@ body {
 }
 
 .EkVillain {
-    background-image: url(PlaylistImages/ekVillain.jpg);
+    background-image: url(PlaylistImages/Banjaara.jpg);
 }
 
 .Salaar {
@@ -364,7 +365,7 @@ body {
 
 .localsongs li:hover {
     transform: scale(1.02);
-
+    cursor: pointer;
 }
 
 .play {
@@ -373,9 +374,9 @@ body {
 
 }
 
-.play:hover {
+.AudioController:hover {
     transform: scale(1.2);
-
+cursor: pointer;
 }
 
 .navigationComponents {
