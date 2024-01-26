@@ -1,5 +1,5 @@
-//Create global variable
-let currentSong = new Audio();
+//Create global default variable
+let currentSong = new Audio("PlaylistSongs/YourFavourites/Zara Zara.mp3");
 
 //Create functions to fetch songs from folder
 async function getSongs() {

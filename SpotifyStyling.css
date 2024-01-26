@@ -137,6 +137,7 @@ body {
     caret-color: white;
     /*changes cursor colour to white*/
     outline: none;
+    color: #fff;
 }
 
 .song {
@@ -295,23 +296,43 @@ body {
     align-items: center;
     margin-top: 1.2rem;
 }
-.VolumeBar{
-    width: 50%;
-    height: 4px;
-    margin: 1rem;
-    background-color: #ffffff;
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    /* width: 100%; */
+    height: 6px;
+    border-radius: 5px;
+    background: #fff; /* default track color */
+    outline: none;
+    opacity: 1;
+    /* transition: opacity 0.2s; */
+}
 
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff; /* default thumb color */
+    cursor: pointer;
+}
+
+
+input[type="range"]:active {
+    background: #1db954; /* active track color */
 }
 .currentSong {
     width: 20%;
     display: flex;
-    justify-content:space-around;
+    justify-content: start;
     /* padding:1rem ; */
     margin-top: 1.2rem;
-    /* margin-left: 1rem; */
+    margin-left: 1rem;
     align-items: center;
 }
-.playBar:hover{
+
+.playBar:hover {
     cursor: pointer;
 }
 
@@ -330,6 +351,7 @@ body {
     width: 0;
     /* Hide scrollbar for Chrome, Safari, and Opera */
 }
+
 .SpotifyPlaylist::-webkit-scrollbar {
     width: 0;
     /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -477,7 +499,7 @@ body {
 
     .searchBar {
         /* width: 42px; */
-       display: none;
+        display: none;
 
     }
 
@@ -487,7 +509,7 @@ body {
 
     .search {
         /* width: 1px; */
-/* display: none; */
+        /* display: none; */
     }
 
     nav {
@@ -501,14 +523,17 @@ body {
     .cross {
         display: block;
     }
-    .currentSong{
+
+    .currentSong {
         /* width: 20%; */
         display: none;
     }
-    .songControls{
+
+    .songControls {
         width: 100%;
     }
-    .VolumeButtons{
+
+    .VolumeButtons {
         /* width: 0%; */
         display: none;
     }
