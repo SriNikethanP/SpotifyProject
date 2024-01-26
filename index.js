@@ -88,15 +88,16 @@ async function main() {
 
     // console.log(songUL.innerHTML)
     //    songUL.innerHTML = songUL.innerHTML + songs[0]
-    let PlayButton = document.querySelector(".play");
+    let PlayButton = document.querySelector(".play")
     li.forEach(element => {
         element.addEventListener("click", () => {
             let songName = element.querySelector(".songName").innerHTML.replaceAll(" ", "")
-            let currentButton = document.querySelector(`.${songName}`);
+             currentButton = document.querySelector(`.${songName}`);
             if (currentSong.paused) {
                 
                 playMusic(element.querySelector(".songName").innerHTML.trim())
                 currentButton.src = "SvgIcons/Pause.svg"
+                // console.log(PlayButton)
                 PlayButton.src = "SvgIcons/Pause.svg"
             }
             else {
@@ -104,21 +105,22 @@ async function main() {
                 currentButton.src = "SvgIcons/PlayButton.svg"
                 PlayButton.src = "SvgIcons/PlayButton.svg"
             }
+            // console.log(element.querySelector(".songName").innerHTML.trim())
             PlayButton.addEventListener("click", () => {
             if (currentSong.paused) {
                 currentSong.play();
-                currentButton.src = "SvgIcons/Pause.svg"
+                // currentButton.src = "SvgIcons/Pause.svg"
                 PlayButton.src = "SvgIcons/Pause.svg"
                 }
                 else {
                     currentSong.pause();
-                    currentButton.src = "SvgIcons/PlayButton.svg"
+                    // currentButton.src = "SvgIcons/PlayButton.svg"
                     PlayButton.src = "SvgIcons/PlayButton.svg"
                 }
-            })
-            // console.log(element.querySelector(".songName").innerHTML.trim())
         })
-     })
+        // console.log(currentSong.currentSrc)
+        })
+    })
 }
 main()
 //Add hamburger
