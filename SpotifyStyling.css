@@ -103,6 +103,7 @@ body {
     height: 75%;
     position: relative;
     /* overflow-y: auto; */
+    /* overflow: hidden ; */
     /* width:auto; */
 }
 
@@ -180,7 +181,7 @@ body {
 }
 
 .playlist {
-    width: 250px;
+    width: 230px;
     height: 47%;
     background-color: #101010;
     margin: 3px;
@@ -245,7 +246,7 @@ body {
     width: 100%;
     background-color: #000000;
     /* background-color: #fff; */
-    min-height: 6%;
+    max-height: 8%;
 
     padding-top: 12px;
     position: absolute;
@@ -278,7 +279,7 @@ body {
     margin: 1rem;
     /* margin-bottom: 2rem; */
     height: 4px;
-    width: 100%;
+    width: 92%;
     background-color: #fff;
     /* color: white; */
     display: flex;
@@ -310,6 +311,9 @@ body {
     /* margin-left: 1rem; */
     align-items: center;
 }
+.playBar:hover{
+    cursor: pointer;
+}
 
 .YourPlaylist p {
     color: white;
@@ -323,6 +327,10 @@ body {
 }
 
 .localsongs::-webkit-scrollbar {
+    width: 0;
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+.SpotifyPlaylist::-webkit-scrollbar {
     width: 0;
     /* Hide scrollbar for Chrome, Safari, and Opera */
 }
@@ -468,8 +476,8 @@ body {
     }
 
     .searchBar {
-        width: 42px;
-
+        /* width: 42px; */
+       display: none;
 
     }
 
@@ -478,7 +486,8 @@ body {
     }
 
     .search {
-        width: 1px;
+        /* width: 1px; */
+/* display: none; */
     }
 
     nav {
@@ -491,6 +500,17 @@ body {
 
     .cross {
         display: block;
+    }
+    .currentSong{
+        /* width: 20%; */
+        display: none;
+    }
+    .songControls{
+        width: 100%;
+    }
+    .VolumeButtons{
+        /* width: 0%; */
+        display: none;
     }
 }
 

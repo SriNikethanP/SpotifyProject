@@ -136,6 +136,15 @@ async function main() {
             // console.log(currentSong.currentSrc)
         })
     })
+
+    //Add eventlistener to previous and next
+    previous.addEventListener("click", () => {
+        console.log("previous")
+    })
+    next.addEventListener("click", () => {
+        console.log("next")
+    })
+    
 }
 main()
 //Add hamburger
