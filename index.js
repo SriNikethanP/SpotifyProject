@@ -21,7 +21,7 @@ async function getSongs() {
 }
 function playMusic(track) {
     // let audio = new Audio("/PlaylistSongs/YourFavourites/" + track + ".mp3")
-    currentSong.src="/PlaylistSongs/YourFavourites/" + track + ".mp3"
+    currentSong.src = "/PlaylistSongs/YourFavourites/" + track + ".mp3"
     currentSong.play();
 
 }
@@ -69,10 +69,10 @@ async function main() {
     //                     //     element.src = "SvgIcons/Pause.svg"
     //                     // });
     //                     currentButton.src = "SvgIcons/Pause.svg"
-                        
+
     //                 } else {
     //                     audio.pause();
-                        
+
     //                     currentButton.src = "SvgIcons/PlayButton.svg"
     //                     console.log("paused")
     //                     // currentButton.forEach(element => {
@@ -88,13 +88,17 @@ async function main() {
 
     // console.log(songUL.innerHTML)
     //    songUL.innerHTML = songUL.innerHTML + songs[0]
+    let currentSongDetails = document.querySelector(".currentSong")
+    let currentSongDetailsFilled = false;
     let PlayButton = document.querySelector(".play")
     li.forEach(element => {
         element.addEventListener("click", () => {
             let songName = element.querySelector(".songName").innerHTML.replaceAll(" ", "")
-             currentButton = document.querySelector(`.${songName}`);
+            let fullSongName = element.querySelector(".songName").innerHTML
+
+            currentButton = document.querySelector(`.${songName}`);
             if (currentSong.paused) {
-                
+
                 playMusic(element.querySelector(".songName").innerHTML.trim())
                 currentButton.src = "SvgIcons/Pause.svg"
                 // console.log(PlayButton)
@@ -107,18 +111,29 @@ async function main() {
             }
             // console.log(element.querySelector(".songName").innerHTML.trim())
             PlayButton.addEventListener("click", () => {
-            if (currentSong.paused) {
-                currentSong.play();
-                // currentButton.src = "SvgIcons/Pause.svg"
-                PlayButton.src = "SvgIcons/Pause.svg"
+                if (currentSong.paused) {
+                    currentSong.play();
+                    currentButton.src = "SvgIcons/Pause.svg"
+                    PlayButton.src = "SvgIcons/Pause.svg"
                 }
                 else {
                     currentSong.pause();
-                    // currentButton.src = "SvgIcons/PlayButton.svg"
+                    currentButton.src = "SvgIcons/PlayButton.svg"
                     PlayButton.src = "SvgIcons/PlayButton.svg"
                 }
-        })
-        // console.log(currentSong.currentSrc)
+            })
+            // if (currentSongDetailsFilled === false) {
+                
+                currentSongDetails.innerHTML = `<div class="songPhoto">
+                <div class="songphotocard"><img src="PlaylistImages/${songName}.jpg" alt=""> </div>
+                
+                    <div class="songName">${fullSongName}</div>
+                </div>`
+
+            //     currentSongDetailsFilled = true;
+            // }
+            
+            // console.log(currentSong.currentSrc)
         })
     })
 }

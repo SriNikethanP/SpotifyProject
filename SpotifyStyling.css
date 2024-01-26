@@ -252,10 +252,63 @@ body {
     bottom: 0;
     display: flex;
     justify-content: center;
-    align-items: start;
-    gap: 6px;
+    align-items: center;
+    /* gap: 6px; */
     z-index: 2;
 
+}
+
+.controlButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.songControls {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 1rem;
+
+}
+
+.seekbar {
+    /* padding: 1rem; */
+    margin: 1rem;
+    /* margin-bottom: 2rem; */
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    /* color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.VolumeButtons {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.2rem;
+}
+.VolumeBar{
+    width: 50%;
+    height: 4px;
+    margin: 1rem;
+    background-color: #ffffff;
+
+}
+.currentSong {
+    width: 20%;
+    display: flex;
+    justify-content:space-around;
+    /* padding:1rem ; */
+    margin-top: 1.2rem;
+    /* margin-left: 1rem; */
+    align-items: center;
 }
 
 .YourPlaylist p {
@@ -328,13 +381,14 @@ body {
     margin: 6px;
     /* height: 48px; */
 }
+
 .songphotocard img {
     max-width: 100%;
     max-height: 100%;
 }
 
 .songName {
-    /* width: 70%; */
+    /* width: 100%; */
 
 }
 
@@ -377,7 +431,7 @@ body {
 
 .AudioController:hover {
     transform: scale(1.2);
-cursor: pointer;
+    cursor: pointer;
 }
 
 .navigationComponents {
@@ -439,6 +493,7 @@ cursor: pointer;
         display: block;
     }
 }
+
 @media (max-width: 768px) {
     .YourPlaylist p {
         font-size: smaller;
