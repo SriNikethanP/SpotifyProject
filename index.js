@@ -89,61 +89,98 @@ async function main() {
     // console.log(songUL.innerHTML)
     //    songUL.innerHTML = songUL.innerHTML + songs[0]
     let currentSongDetails = document.querySelector(".currentSong")
-    let currentSongDetailsFilled = false;
+    // let currentSongDetailsFilled = false;
     let PlayButton = document.querySelector(".play")
     li.forEach(element => {
         element.addEventListener("click", () => {
             let songName = element.querySelector(".songName").innerHTML.replaceAll(" ", "")
             let fullSongName = element.querySelector(".songName").innerHTML
 
-            currentButton = document.querySelector(`.${songName}`);
+            // currentButton = document.querySelector(`.${songName}`);
             if (currentSong.paused) {
 
                 playMusic(element.querySelector(".songName").innerHTML.trim())
-                currentButton.src = "SvgIcons/Pause.svg"
+                // currentButton.src = "SvgIcons/Pause.svg"
                 // console.log(PlayButton)
                 PlayButton.src = "SvgIcons/Pause.svg"
             }
             else {
                 currentSong.pause();
-                currentButton.src = "SvgIcons/PlayButton.svg"
+                // currentButton.src = "SvgIcons/PlayButton.svg"
                 PlayButton.src = "SvgIcons/PlayButton.svg"
             }
             // console.log(element.querySelector(".songName").innerHTML.trim())
-            PlayButton.addEventListener("click", () => {
-                if (currentSong.paused) {
-                    currentSong.play();
-                    currentButton.src = "SvgIcons/Pause.svg"
-                    PlayButton.src = "SvgIcons/Pause.svg"
-                }
-                else {
-                    currentSong.pause();
-                    currentButton.src = "SvgIcons/PlayButton.svg"
-                    PlayButton.src = "SvgIcons/PlayButton.svg"
-                }
-            })
             // if (currentSongDetailsFilled === false) {
                 
                 currentSongDetails.innerHTML = `<div class="songPhoto">
                 <div class="songphotocard"><img src="PlaylistImages/${songName}.jpg" alt=""> </div>
                 
-                    <div class="songName">${fullSongName}</div>
+                <div class="songName">${fullSongName}</div>
                 </div>`
-
-            //     currentSongDetailsFilled = true;
+                
+                //     currentSongDetailsFilled = true;
+                // }
+                
+                // console.log(currentSong.currentSrc)
+            })
+        })
+        PlayButton.addEventListener("click", () => {
+            if (currentSong.paused) {
+                currentSong.play();
+                // currentButton.src = "SvgIcons/Pause.svg"
+                PlayButton.src = "SvgIcons/Pause.svg"
+            }
+            else {
+                currentSong.pause();
+                // currentButton.src = "SvgIcons/PlayButton.svg"
+                PlayButton.src = "SvgIcons/PlayButton.svg"
+            }
+        })
+        
+        //Add eventlistener to previous and next
+        previous.addEventListener("click", () => {
+            // console.log("previous")
+            let currentSongname = currentSong.src.split("/").slice(-1)[0].split(".mp3")[0]
+            let index = songs.indexOf(currentSongname, 0)
+            if ((index - 1) >= 0) {
+                PlayButton.src = "SvgIcons/Pause.svg"
+                let PlayingTrack = songs[index - 1].replaceAll("%20", " ")
+                let fullPlayingTrack = songs[index - 1].replaceAll("%20","")
+                playMusic(songs[index -1])
+                
+                currentSongDetails.innerHTML = `<div class="songPhoto">
+                <div class="songphotocard"><img src="PlaylistImages/${fullPlayingTrack}.jpg" alt=""> </div>
+                
+                <div class="songName">${PlayingTrack}</div>
+                </div>`
+                
+            }
+            
+        })
+        next.addEventListener("click", () => {
+            // console.log("next")
+            // console.log()
+            let currentSongname = currentSong.src.split("/").slice(-1)[0].split(".mp3")[0]
+            // console.log(songs)
+            let index = songs.indexOf(currentSongname, 0)
+            if ((index + 1) < songs.length) {
+                PlayButton.src = "SvgIcons/Pause.svg"
+                playMusic(songs[index + 1])
+                
+                let PlayingTrack = songs[index + 1].replaceAll("%20", " ")
+                let fullPlayingTrack = songs[index + 1].replaceAll("%20","")
+                currentSongDetails.innerHTML = `<div class="songPhoto">
+                <div class="songphotocard"><img src="PlaylistImages/${fullPlayingTrack}.jpg" alt=""> </div>
+                
+                <div class="songName">${PlayingTrack}</div>
+                </div>`
+            }
+            // else {
+                
+            //     PlayButton.src = "SvgIcons/PlayButton.svg"
             // }
             
-            // console.log(currentSong.currentSrc)
         })
-    })
-
-    //Add eventlistener to previous and next
-    previous.addEventListener("click", () => {
-        console.log("previous")
-    })
-    next.addEventListener("click", () => {
-        console.log("next")
-    })
     
 }
 main()
