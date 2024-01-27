@@ -194,7 +194,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     transition: width 2s,height 3s;
-    /* transition: all 2s; */
+    transition: all 2s;
     color: white;
 }
 
@@ -202,7 +202,7 @@ body {
     /* transform: scale(1.1); */
     z-index: 1;
     cursor: pointer;
-    /* background-color: #484747 0.3s; */
+    background-color: #484747 ;
 
 }
 
