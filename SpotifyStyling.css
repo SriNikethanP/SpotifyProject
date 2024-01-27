@@ -183,8 +183,8 @@ body {
 }
 
 .playlist {
-    width: 22%;
-    height: 45%;
+    width: 200px;
+    height: 250px;
     background-color: #101010;
     margin: 3px;
     margin-top: 12px;
@@ -194,6 +194,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     transition: width 2s,height 3s;
+    /* transition: all 2s; */
     color: white;
 }
 
@@ -505,7 +506,7 @@ input[type="range"]:active {
     .right {
         background-color: #000000;
         position: absolute;
-        left: -100%;
+        left: -130%;
         z-index: 1;
         transition: all 0.5s;
         width: 350px;
@@ -564,26 +565,44 @@ input[type="range"]:active {
         height: max-content;
     }
     .playlist{
-        width: 300px;
-        height: 350px;
+        width: 450px;
+        height: 500px;
+        /* transform: scale(1.5); */
         /* transition:  2s ease-in-out; */
     }
 }
 
 @media (max-width: 768px) {
     .playlist{
-        width: 250px;
-        height: 300px;
+        width: 300px;
+        height: 350px;
+        /* transform: scale(1.5); */
         /* transition:  2s ease-in-out; */
     }
     .YourPlaylist p {
         font-size: smaller;
     }
 }
-@media (max-width: 1600px) {
+@media (max-width: 400px) {
+    .YourPlaylist p {
+        font-size: smaller;
+    }
     .playlist{
-        width: 500px;
-        height: 550px;
+        width: 250px;
+        height: 300px;
+        /* transform: scale(1.5); */
+        /* transition:  2s ease-in-out; */
+    }
+    
+}
+@media (max-width: 300px) {
+    .YourPlaylist p {
+        font-size: smaller;
+    }
+    .playlist{
+        width: 200px;
+        height: 250px;
+        /* transform: scale(1.5); */
         /* transition:  2s ease-in-out; */
     }
     

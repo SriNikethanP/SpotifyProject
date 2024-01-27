@@ -214,7 +214,7 @@ hamburger.addEventListener("click", () => {
 
 //Add cross
 document.querySelector(".cross").addEventListener("click", () => {
-    document.querySelector(".right").style.left = "-100%"
+    document.querySelector(".right").style.left = "-130%"
 })
 
 //Add eventlistener to keyboard space button
