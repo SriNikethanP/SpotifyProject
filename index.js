@@ -192,7 +192,16 @@ async function main() {
         currentSong.volume = parseInt(e.target.value)/100
     })
     
-
+    //SeekBar
+    currentSong.addEventListener("timeupdate", () => {
+       document.querySelector(".circle").style.left = currentSong.currentTime/currentSong.duration * 100 + "%"
+    })
+    document.querySelector(".seekbar").addEventListener("click", (e) => {
+        document.querySelector(".circle").style.left =( e.offsetX/e.target.getBoundingClientRect().width * 100) + "%"
+        currentSong.currentTime = (( e.offsetX/e.target.getBoundingClientRect().width * 100) * currentSong.duration) /100
+        // console.log(currentSong.currentTime)
+        
+    })
 }
 
 main()

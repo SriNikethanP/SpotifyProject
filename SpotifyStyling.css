@@ -52,6 +52,7 @@ body {
     width: 100%;
     overflow-y: auto;
     padding-bottom: 50px;
+    transition: flex-wrap 2s ease-in-out;
 }
 
 .rightSection {
@@ -183,7 +184,7 @@ body {
 
 .playlist {
     width: 22%;
-    height: 47%;
+    height: 45%;
     background-color: #101010;
     margin: 3px;
     margin-top: 12px;
@@ -192,14 +193,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    transition: transform 0.2s;
+    transition: width 2s,height 3s;
     color: white;
 }
 
 .playlist:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     z-index: 1;
     cursor: pointer;
+    /* background-color: #484747 0.3s; */
+
 }
 
 .album {
@@ -247,7 +250,7 @@ body {
     width: 100%;
     background-color: #000000;
     /* background-color: #fff; */
-    max-height: 8%;
+    height: 8%;
 
     padding-top: 12px;
     position: absolute;
@@ -265,7 +268,6 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
 }
 
 .songControls {
@@ -280,14 +282,25 @@ body {
     /* padding: 1rem; */
     margin: 1rem;
     /* margin-bottom: 2rem; */
-    height: 4px;
+    height: 6px;
     width: 92%;
+    border-radius: 3px;
     background-color: #fff;
     /* color: white; */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
+}
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 0%;
+    transition: left 0.5s;
 }
 
 .VolumeButtons {
@@ -297,13 +310,15 @@ body {
     align-items: center;
     margin-top: 1.2rem;
 }
+
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     /* width: 100%; */
     height: 6px;
     border-radius: 5px;
-    background: #fff; /* default track color */
+    background: #fff;
+    /* default track color */
     outline: none;
     opacity: 1;
     /* transition: opacity 0.2s; */
@@ -315,14 +330,17 @@ input[type="range"]::-webkit-slider-thumb {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #fff; /* default thumb color */
+    background: #fff;
+    /* default thumb color */
     cursor: pointer;
 }
 
 
 input[type="range"]:active {
-    background: #1db954; /* active track color */
+    background: #1db954;
+    /* active track color */
 }
+
 .currentSong {
     width: 20%;
     display: flex;
@@ -480,6 +498,9 @@ input[type="range"]:active {
     .rightSection {
         width: 0%;
     }
+    .SpotifyPlaylist{
+        /* flex-wrap: wrap; */
+    }
 
     .right {
         background-color: #000000;
@@ -526,8 +547,7 @@ input[type="range"]:active {
     }
 
     .currentSong {
-        /* width: 20%; */
-        display: none;
+        width: auto;
     }
 
     .songControls {
@@ -538,17 +558,33 @@ input[type="range"]:active {
         /* width: 0%; */
         display: none;
     }
-    .playlist{
-        width: 210px;
-        height: 250px;
-    }
-    .playBar{
+
+    .playBar {
         flex-direction: column;
+        height: max-content;
+    }
+    .playlist{
+        width: 300px;
+        height: 350px;
+        /* transition:  2s ease-in-out; */
     }
 }
 
 @media (max-width: 768px) {
+    .playlist{
+        width: 250px;
+        height: 300px;
+        /* transition:  2s ease-in-out; */
+    }
     .YourPlaylist p {
         font-size: smaller;
     }
+}
+@media (max-width: 1600px) {
+    .playlist{
+        width: 500px;
+        height: 550px;
+        /* transition:  2s ease-in-out; */
+    }
+    
 }
