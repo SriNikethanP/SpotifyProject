@@ -1,5 +1,6 @@
 //Create global default variable
 let currentSong = new Audio("PlaylistSongs/YourFavourites/Zara Zara.mp3");
+let currentSongDetails = document.querySelector(".currentSong")
 let currentFolder = "";
 let songs
 //Create functions to fetch songs from folder
@@ -20,9 +21,9 @@ async function getSongs(folder) {
     let songUL = document.querySelector(".localsongs").getElementsByTagName("ul")[0]
     songUL.innerHTML = ""
     for (const i of songs) {
-   
+
         if (currentFolder === "YourFavourites") {
-            
+
             songUL.innerHTML = songUL.innerHTML + `<li> <div class="SongCard">
             <div class="songPhoto">
             <div class="songphotocard"><img src="PlaylistImages/${i.replaceAll("%20", "")}.jpg" alt=""> </div>
@@ -46,14 +47,13 @@ async function getSongs(folder) {
             // console.log(songUL.innerHTML)
         }
     }
-    
+
     let li = Array.from(document.querySelector(".localsongs").getElementsByTagName("li"));
-    let currentSongDetails = document.querySelector(".currentSong")
     li.forEach(element => {
         element.addEventListener("click", () => {
             let songName = element.querySelector(".songName").innerHTML.replaceAll(" ", "")
             let fullSongName = element.querySelector(".songName").innerHTML
-            
+
             if (currentSong.paused) {
                 playMusic(element.querySelector(".songName").innerHTML)
                 PlayButton.src = "SvgIcons/Pause.svg"
@@ -63,14 +63,14 @@ async function getSongs(folder) {
                 PlayButton.src = "SvgIcons/PlayButton.svg"
             }
             if (currentFolder === "YourFavourites") {
-                
+
                 currentSongDetails.innerHTML = `<div class="songPhoto">
                 <div class="songphotocard"><img src="PlaylistImages/${songName}.jpg" alt=""> </div>
                 <div class="songName">${fullSongName}</div>
                 </div>`
             }
             else {
-                
+
                 currentSongDetails.innerHTML = `<div class="songPhoto">
                 <div class="songphotocard"><img src="PlaylistImages/${currentFolder}.jpg" alt=""> </div>
                 <div class="songName">${fullSongName}</div>
@@ -92,20 +92,47 @@ async function getSongs(folder) {
 
     })
 
-    //Add eventlistener to previous and next
-    previous.addEventListener("click", () => {
+   
+
+
+
+    // return songs
+}
+
+//Create function to play audio from folder 
+function playMusic(track) {
+    currentSong.src = `/PlaylistSongs/${currentFolder}/` + track + ".mp3"
+    currentSong.play();
+}
+
+let PlayButton = document.querySelector(".play")
+async function main() {
+
+    await getSongs("YourFavourites")
+
+    let selectedFolder;
+
+    Array.from(document.querySelectorAll(".playlist")).forEach(element => {
+        element.addEventListener("click", async item => {
+            // console.log(item.currentTarget.dataset.folder)
+            await getSongs(`${item.currentTarget.dataset.folder}`)
+            selectedFolder = item.currentTarget.dataset.folder
+        })
+    })
+     //Add eventlistener to previous and next
+     previous.addEventListener("click", () => {
         // console.log("previous")
         let currentSongname = currentSong.src.split("/").slice(-1)[0].split(".mp3")[0]
         let index = songs.indexOf(currentSongname, 0)
         if ((index - 1) >= 0) {
             PlayButton.src = "SvgIcons/Pause.svg"
-            
+
             playMusic(songs[index - 1])
 
             if (currentFolder === "YourFavourites") {
                 let PlayingTrack = songs[index - 1].replaceAll("%20", " ")
                 let fullPlayingTrack = songs[index - 1].replaceAll("%20", "")
-                
+
                 currentSongDetails.innerHTML = `<div class="songPhoto">
                 <div class="songphotocard"><img src="PlaylistImages/${fullPlayingTrack}.jpg" alt=""> </div>
                 
@@ -120,17 +147,18 @@ async function getSongs(folder) {
                 
                 <div class="songName">${PlayingTrack}</div>
                 </div>`
-                
+
             }
 
         }
 
     })
+    
     next.addEventListener("click", () => {
         // console.log("next")
         // console.log()
         let currentSongname = currentSong.src.split("/").slice(-1)[0].split(".mp3")[0]
-        // console.log(songs)
+        console.log(currentSongname)
         let index = songs.indexOf(currentSongname, 0)
         if ((index + 1) < songs.length) {
             PlayButton.src = "SvgIcons/Pause.svg"
@@ -153,37 +181,11 @@ async function getSongs(folder) {
                 
                 <div class="songName">${PlayingTrack}</div>
                 </div>`
-                
+
             }
         }
-})
-    
-    
-    
-    // return songs
-}
-
-//Create function to play audio from folder 
-function playMusic(track) {
-    currentSong.src = `/PlaylistSongs/${currentFolder}/` + track + ".mp3"
-    currentSong.play();
-}
-
-let PlayButton = document.querySelector(".play")
-async function main() {
-    
-    await getSongs("YourFavourites")
-    
-    
-    
-    Array.from(document.querySelectorAll(".playlist")).forEach(element => {
-        element.addEventListener("click", async item => {
-            // console.log(item.currentTarget.dataset.folder)
-            await getSongs(`${item.currentTarget.dataset.folder}`)
-            
-        })
     })
-    
+
 }
 
 main()
@@ -200,7 +202,7 @@ document.querySelector(".cross").addEventListener("click", () => {
 })
 
 //Add eventlistener to keyboard space button
-document.addEventListener("keydown", (event) => { 
+document.addEventListener("keydown", (event) => {
     makesound(event.key)
 })
 function makesound(key) {
@@ -215,4 +217,4 @@ function makesound(key) {
         }
     }
 
-    }
+}
