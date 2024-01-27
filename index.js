@@ -24,6 +24,7 @@ function playMusic(track) {
     currentSong.play();
 }
 
+let PlayButton = document.querySelector(".play")
 async function main() {
     let songs = await getSongs()
     let songUL = document.querySelector(".localsongs").getElementsByTagName("ul")[0]
@@ -41,7 +42,6 @@ async function main() {
 
     let li = Array.from(document.querySelector(".localsongs").getElementsByTagName("li"));
     let currentSongDetails = document.querySelector(".currentSong")
-    let PlayButton = document.querySelector(".play")
     li.forEach(element => {
         element.addEventListener("click", () => {
             let songName = element.querySelector(".songName").innerHTML.replaceAll(" ", "")
@@ -118,3 +118,20 @@ document.querySelector(".cross").addEventListener("click", () => {
     document.querySelector(".right").style.left = "-100%"
 })
 
+//Add eventlistener to keyboard space button
+document.addEventListener("keydown", (event) => { 
+    makesound(event.key)
+})
+function makesound(key) {
+    if (key === " ") {
+        if (currentSong.paused) {
+            currentSong.play();
+            PlayButton.src = "SvgIcons/Pause.svg"
+        }
+        else {
+            currentSong.pause();
+            PlayButton.src = "SvgIcons/PlayButton.svg"
+        }
+    }
+
+    }
