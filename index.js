@@ -186,6 +186,13 @@ async function main() {
         }
     })
 
+    //Add an event listener to Volume Button
+    document.querySelector(".VolumeButtons").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        // console.log(e)
+        currentSong.volume = parseInt(e.target.value)/100
+    })
+    
+
 }
 
 main()

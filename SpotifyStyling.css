@@ -182,7 +182,7 @@ body {
 }
 
 .playlist {
-    width: 230px;
+    width: 22%;
     height: 47%;
     background-color: #101010;
     margin: 3px;
@@ -265,6 +265,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .songControls {
@@ -536,6 +537,13 @@ input[type="range"]:active {
     .VolumeButtons {
         /* width: 0%; */
         display: none;
+    }
+    .playlist{
+        width: 210px;
+        height: 250px;
+    }
+    .playBar{
+        flex-direction: column;
     }
 }
 
