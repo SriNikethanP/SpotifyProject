@@ -234,3 +234,23 @@ function makesound(key) {
     }
 
 }
+
+let VolumeButton = document.getElementsByClassName("VolumeButtons")[0].getElementsByTagName("img")[0]
+let Mute = false
+VolumeButton.addEventListener("click", ()=> {
+    if (Mute === false) {
+        document.querySelector(".VolumeButtons").getElementsByTagName("input")[0].value = 0
+        currentSong.volume = 0;
+        VolumeButton.src = "SvgIcons/mute.svg"
+        Mute = true
+        // console.log("volume")
+        
+    }    
+    else {
+        
+        document.querySelector(".VolumeButtons").getElementsByTagName("input")[0].value = 10
+        currentSong.volume = 0.1;
+        VolumeButton.src = "SvgIcons/volume.svg"
+        Mute = false
+    }
+})
