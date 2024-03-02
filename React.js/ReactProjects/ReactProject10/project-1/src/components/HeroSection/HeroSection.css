@@ -1,0 +1,59 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+.heroContent{
+    max-width: 595px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    height: calc(100vh - 72px);
+}
+.heroContent h1{
+    font-size: 108px;
+    line-height: 102px;
+}
+.heroContent p{
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 404px;
+    color: #5A5959;
+}
+
+.heroBtn{
+    display: flex;
+    gap: 40px;
+}
+
+.shopNow{
+    all: unset;
+    background-color: #d01c28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 150px;
+    height: 41px;
+}
+
+.category{
+    all: unset;
+    background-color: transparent;
+    color: #5A5959;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 37px;
+    border: 2px solid #5A5959;
+}
+.shopping{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.shoppingLogos{
+    display: flex;
+    gap: 16px;
+}

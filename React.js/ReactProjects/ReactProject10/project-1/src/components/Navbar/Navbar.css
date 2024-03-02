@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  height: 72px;
+  margin: 0 auto;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+}
+nav > ul > li {
+  color: #2e2e2e;
+  font-weight: 600;
+}
+
+nav button {
+  all: unset;
+  background-color: #d01c28;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 75px;
+  height: 31px;
+}
