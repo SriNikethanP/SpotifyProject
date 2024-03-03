@@ -194,7 +194,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     transition: width 2s,height 3s;
-    transition: all 2s;
+    transition: all 1s;
     color: white;
 }
 
